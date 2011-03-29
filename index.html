@@ -38,12 +38,15 @@ h1 {
 }
 p {
 	margin:1em 0;
+	clear:both;
 }
 p::first-letter {
 	color:#5aa5b3;
 	font-size:300%;
 	line-height:1;
 	text-transform:uppercase;
+	float:left;
+	margin:0 .1em 0 0;
 }
 p::first-line {
 	text-transform:lowercase;
@@ -76,7 +79,7 @@ div::first-letter {
 }
 .first-letter {
 	font-size:500%;
-	color:red;
+	color:#ac4800;
 }
 #seven .first-letter {
 	display:inline-block;
@@ -89,12 +92,13 @@ div::first-letter {
 </head>
 <body>
 	<h1>Various Sundry Typography Tests</h1>
-	<p id="one">This Paragraph has <code>text-transform:lowercase</code> and <code>font-variant:small-caps</code> on the <code>::first-line</code> pseudo-element and font-size:200% &amp; text-transform:uppercase on the <code>::first-letter</code> pseudo-element. This is the default style for all paragraphs.</p>
+	<p id="one">This Paragraph has <code>text-transform:lowercase</code> and <code>font-variant:small-caps</code> on the <code>::first-line</code> pseudo-element and <code>font-size:200%</code> &amp; <code>text-transform:uppercase</code> on the <code>::first-letter</code> pseudo-element. This is the default style for all paragraphs.</p>
+	<p>“I’ve included this paragraph,” he said, to demonstrate whether or not the <code>::first-letter</code> pseudo-element handles punctuation characters properly. The open quote and apostrophe should be included.</p>
 	<p id="two">This paragraph has font-variant:normal on the <code>::first-line</code> pseudo-element. Otherwise it inherits default styles.</p>
 	<p id="three">This paragraph has <code>font-variant: normal</code> and <code>text-transorm:uppercase</code> on the <code>::first-line</code> pseudo-element. Otherwise it inherits default styles.</p>
-	<p id="four">This paragraph has font-family: Cabin on the <code>::first-letter</code> pseudo-element.</p>
+	<p id="four">This paragraph has <code>font-family: Cabin</code> on the <code>::first-letter</code> pseudo-element.</p>
 	<p id="five">This paragraph has <code>font-variant:normal</code> on the <code>::first-line</code> pseudo-element and <code>font-family: Cabin</code> on the <code>::first-letter</code> pseudo-element.</p>
-	<p id="six">This paragraph uses JavaScript to wrap its first-letter in a span after a 2 second setTimeout call. The span receives font-size:500% and color:red styling.</p>
+	<p id="six">This paragraph uses JavaScript to wrap its first letter in a span after a 2 second <code>setTimeout</code> call. The span receives <codesce>font-size:500%</codesce> and color:#ac4800 styling.</p>
 	<p id="seven">This paragraph does the same as above, only it also sets the ::first-line element to font-variant:normal as well. Also, the span for this paragraph receives an extra display:inline-block.</p>
 	<p id="eight">This paragraph will render initially in Quattrocento, but a class will be set on it after 2 seconds to change it to <code>font-family:Cabin,cursive</code>.</p>
 </body>
