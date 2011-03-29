@@ -77,9 +77,9 @@ p::first-line {
 </head>
 <body>
 	<h1>Handling WebKit gracefully.</h1>
-	<p>This Paragraph has <code>text-transform:lowercase</code> and <code>font-variant:small-caps</code> on the <code>::first-line</code> pseudo-element and <code>font-size:200%</code> &amp; <code>text-transform:uppercase</code> on the <code>::first-letter</code> pseudo-element. This is the default style for all paragraphs.</p>
+	<p>This Paragraph has <code>text-transform:lowercase</code> and <code>font-variant:small-caps</code> on the <code>::first-line</code> pseudo-element. JavaScript-disabled browsers receive <code>font-size:200%</code>, <code>font-family: Cabin, sans-serif</code>, and <code>text-transform:uppercase</code> rules the <code>::first-letter</code> pseudo-element, while browsers with JS will wrap the first letter in a <code>span</code> element for more consistent styling. WebKit’s inability to use text-tranform on the ::first-line pseudo-element will result in the capital P in “Paragraph” looking wrong.</p>
 	<div id="footer">
-		Read the relevant blog post.<br />
+		Read the <a href="http://somadesign.ca/2011/web-typography-pain-points/">relevant blog post</a>.<br />
 		This page is set in <a href="http://www.impallari.com/quattrocento/">Quattrocento</a> and <a href="http://www.impallari.com/cabin">Cabin</a>.
 	</div>
 </body>
