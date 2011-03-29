@@ -24,9 +24,15 @@ body {
 	width:33em;
 	margin:2em auto;
 }
+a {
+	color:#5aa5b3;
+}
 code {
 	font-family:inherit;
-	background-color:#ddd;
+	border-bottom:1px dotted #aaa;
+}
+.cabin {
+	font-family:Cabin;
 }
 h1,h2,h3,h4,h5,h6 {
 	font-family:Cabin, serif;
@@ -87,20 +93,33 @@ div::first-letter {
 .eight { /* class added after 2 seconds */
 	font-family:Cabin, cursive;
 }
+#footer {
+	margin:3em 0 0;
+	padding:1em 0 0;
+	border-top:1px solid #666;
+}
+#footer::first-letter {
+	font-size:inherit;
+	color:inherit;
+}
 
 </style>
 </head>
 <body>
 	<h1>Various Sundry Typography Tests</h1>
-	<p id="one">This Paragraph has <code>text-transform:lowercase</code> and <code>font-variant:small-caps</code> on the <code>::first-line</code> pseudo-element and <code>font-size:200%</code> &amp; <code>text-transform:uppercase</code> on the <code>::first-letter</code> pseudo-element. This is the default style for all paragraphs.</p>
+	<p id="one">This Paragraph has <code>text-transform:lowercase</code> and <code>font-variant:small-caps</code> on the <code>::first-line</code> pseudo-element and <code>font-size:200%</code> &amp; <code>text-transform:uppercase</code> on the <code>::first-letter</code> pseudo-element. This is the default style for all paragraphs. To demonstrate WebKit's <code>::first-line</code> font-family bugs, each fallback font is set to the opposite expected type: <code>font-family:Quattrocento,sans-serif</code> &amp; <code>font-family:Cabin,serif</code>.</p>
 	<p>“I’ve included this paragraph,” he said, to demonstrate whether or not the <code>::first-letter</code> pseudo-element handles punctuation characters properly. The open quote and apostrophe should be included.</p>
 	<p id="two">This paragraph has font-variant:normal on the <code>::first-line</code> pseudo-element. Otherwise it inherits default styles.</p>
 	<p id="three">This paragraph has <code>font-variant: normal</code> and <code>text-transorm:uppercase</code> on the <code>::first-line</code> pseudo-element. Otherwise it inherits default styles.</p>
 	<p id="four">This paragraph has <code>font-family: Cabin</code> on the <code>::first-letter</code> pseudo-element.</p>
 	<p id="five">This paragraph has <code>font-variant:normal</code> on the <code>::first-line</code> pseudo-element and <code>font-family: Cabin</code> on the <code>::first-letter</code> pseudo-element.</p>
-	<p id="six">This paragraph uses JavaScript to wrap its first letter in a span after a 2 second <code>setTimeout</code> call. The span receives <codesce>font-size:500%</codesce> and color:#ac4800 styling.</p>
-	<p id="seven">This paragraph does the same as above, only it also sets the ::first-line element to font-variant:normal as well. Also, the span for this paragraph receives an extra display:inline-block.</p>
+	<p id="six">This paragraph uses JavaScript to wrap its first letter in a span after a 2 second <code>setTimeout</code> call. The span receives <code>font-size:500%</code> and <code>color:#ac4800</code> styling.</p>
+	<p id="seven">This paragraph does the same as above, only it also sets the <code>::first-line</code> element to <code>font-variant:normal</code> as well. Also, the span for this paragraph receives an extra <code>display:inline-block</code>.</p>
 	<p id="eight">This paragraph will render initially in Quattrocento, but a class will be set on it after 2 seconds to change it to <code>font-family:Cabin,cursive</code>.</p>
+	<div id="footer">
+		Read the relevant blog post.<br />
+		This page is set in <a href="http://www.impallari.com/quattrocento/">Quattrocento</a> and <a href="http://www.impallari.com/cabin"class="cabin">Cabin</a>.
+	</div>
 </body>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
 <script>window.jQuery || document.write("<script src='jquery.js'>\x3C/script>")</script>
