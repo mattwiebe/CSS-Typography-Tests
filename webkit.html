@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="UTF-8" />
+<title>Handling WebKit Gracefully</title>
+<script type="text/javascript"> (function(B,C){B[C]=B[C].replace(/\bno-js\b/,'js');})(document.documentElement,'className'); </script>
+<style type="text/css">
+
+@font-face {
+	font-family:Cabin;
+	src:url(Cabin-Bold.ttf);
+	font-weight:normal;
+	font-style:normal;
+}
+@font-face {
+	font-family:Quattrocento;
+	src:url(Quattrocento-Regular.ttf);
+	font-weight:normal;
+	font-style:normal;
+}
+* {margin:0; padding:0;}
+body {
+	background-color:#eee;
+	font:1em/1.5 Quattrocento, serif;
+	width:33em;
+	margin:2em auto;
+}
+a {
+	color:#5aa5b3;
+}
+code {
+	font-family:inherit;
+	border-bottom:1px dotted #aaa;
+}
+.cabin {
+	font-family:Cabin;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-family:Cabin, sans-serif;
+	font-weight:normal;
+	margin:1em 0 .5em;
+}
+h1 {
+	font-size:200%;
+}
+p {
+	margin:1em 0;
+	clear:both;
+}
+.no-js p::first-letter,
+p .first-letter {
+	color:#5aa5b3;
+	font-size:300%;
+	line-height:1;
+	text-transform:uppercase;
+	float:left;
+	margin:0 .1em 0 0;
+	font-family:Cabin,sans-serif;
+}
+p::first-line {
+	text-transform:lowercase;
+	font-variant:small-caps;
+	letter-spacing:.1em;
+}
+.webkit p::first-line {
+	font-size:1.2em; /* Compensate for WebKit's smaller generation of small-caps */
+	line-height:1.25; /* Get our leading back in rhythm */
+	font-family:inherit !important; /* Ensure that we're not trying to specify a font-family so that we don't fall back to a system font */
+}
+#footer {
+	margin:3em 0 0;
+	padding:1em 0 0;
+	border-top:1px solid #666;
+}
+
+</style>
+</head>
+<body>
+	<h1>Handling WebKit gracefully.</h1>
+	<p>This Paragraph has <code>text-transform:lowercase</code> and <code>font-variant:small-caps</code> on the <code>::first-line</code> pseudo-element and <code>font-size:200%</code> &amp; <code>text-transform:uppercase</code> on the <code>::first-letter</code> pseudo-element. This is the default style for all paragraphs.</p>
+	<div id="footer">
+		Read the relevant blog post.<br />
+		This page is set in <a href="http://www.impallari.com/quattrocento/">Quattrocento</a> and <a href="http://www.impallari.com/cabin">Cabin</a>.
+	</div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+<script>window.jQuery || document.write("<script src='jquery.js'>\x3C/script>")</script>
+<script src="webkit.js"></script>
+</html>
