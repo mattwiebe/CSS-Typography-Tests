@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="UTF-8" />
+<title>Typography Tests</title>
+<script type="text/javascript">
+(function(B,C){B[C]=B[C].replace(/\bno-js\b/,'js');})(document.documentElement,'className');
+</script>
+<style type="text/css">
+
+@font-face {
+	font-family:Cabin;
+	src:url(Cabin-Bold.ttf);
+	font-weight:normal;
+	font-style:normal;
+}
+@font-face {
+	font-family:Quattrocento;
+	src:url(Quattrocento-Regular.ttf);
+	font-weight:normal;
+	font-style:normal;
+}
+* {margin:0; padding:0;}
+body {
+	background-color:#eee;
+	font:1em/1.5 Quattrocento, sans-serif;
+	width:33em;
+	margin:2em auto;
+}
+code {
+	font-family:inherit;
+	background-color:#ddd;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-family:Cabin, serif;
+	font-weight:normal;
+	margin:1em 0 .5em;
+}
+h1 {
+	font-size:200%;
+}
+p {
+	margin:1em 0;
+}
+p::first-line {
+	text-transform:lowercase;
+	font-variant:small-caps;
+	letter-spacing:1px;
+}
+.no-js p::first-letter, p .first-letter {
+	font-family:Cabin;
+	font-size:3em;
+	float:left;
+	line-height:1;
+	text-transform:uppercase;
+	font-variant:normal;
+}
+
+</style>
+</head>
+<body>
+	<h1>Various Sundry Typography Tests</h1>
+	<p id="one">This Paragraph has <code>text-transform:lowercase</code> and <code>font-variant:small-caps</code> on the <code>::first-line</code> pseudo-element and font-size:200% &amp; text-transform:uppercase on the <code>::first-letter</code> pseudo-element. This is the default style for all paragraphs.</p>
+</body>
+<script src="jquery.js"></script>
+<script src="grail.js"></script>
+</html>

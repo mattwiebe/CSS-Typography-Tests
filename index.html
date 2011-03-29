@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Typography Tests</title>
+<style type="text/css">
+
+@font-face {
+	font-family:Cabin;
+	src:url(Cabin-Bold.ttf);
+	font-weight:normal;
+	font-style:normal;
+}
+@font-face {
+	font-family:Quattrocento;
+	src:url(Quattrocento-Regular.ttf);
+	font-weight:normal;
+	font-style:normal;
+}
+* {margin:0; padding:0;}
+body {
+	background-color:#eee;
+	font:1em/1.5 Quattrocento, sans-serif;
+	width:33em;
+	margin:2em auto;
+}
+code {
+	font-family:inherit;
+	background-color:#ddd;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-family:Cabin, serif;
+	font-weight:normal;
+	margin:1em 0 .5em;
+}
+h1 {
+	font-size:200%;
+}
+p {
+	margin:1em 0;
+}
+p::first-letter {
+	color:#5aa5b3;
+	font-size:300%;
+	line-height:1;
+	text-transform:uppercase;
+}
+p::first-line {
+	text-transform:lowercase;
+	font-variant:small-caps;
+	letter-spacing:.1em;
+}
+#two::first-line {
+	font-variant:normal;
+}
+#three::first-line {
+	font-variant:normal;
+	text-transform:uppercase;
+}
+#four::first-letter {
+	font-family:Cabin;
+}
+#five::first-line {
+	font-variant:normal;
+}
+#five::first-letter {
+	font-family:Cabin;
+}
+#seven::first-line {
+	font-variant:normal;
+	text-transform:none;
+}
+div::first-letter {
+	color:#5aa5b3;
+	font-size:300%;
+}
+.first-letter {
+	font-size:500%;
+	color:red;
+}
+#seven .first-letter {
+	display:inline-block;
+}
+.eight { /* class added after 2 seconds */
+	font-family:Cabin, cursive;
+}
+
+</style>
+</head>
+<body>
+	<h1>Various Sundry Typography Tests</h1>
+	<p id="one">This Paragraph has <code>text-transform:lowercase</code> and <code>font-variant:small-caps</code> on the <code>::first-line</code> pseudo-element and font-size:200% &amp; text-transform:uppercase on the <code>::first-letter</code> pseudo-element. This is the default style for all paragraphs.</p>
+	<p id="two">This paragraph has font-variant:normal on the <code>::first-line</code> pseudo-element. Otherwise it inherits default styles.</p>
+	<p id="three">This paragraph has <code>font-variant: normal</code> and <code>text-transorm:uppercase</code> on the <code>::first-line</code> pseudo-element. Otherwise it inherits default styles.</p>
+	<p id="four">This paragraph has font-family: Cabin on the <code>::first-letter</code> pseudo-element.</p>
+	<p id="five">This paragraph has <code>font-variant:normal</code> on the <code>::first-line</code> pseudo-element and <code>font-family: Cabin</code> on the <code>::first-letter</code> pseudo-element.</p>
+	<p id="six">This paragraph uses JavaScript to wrap its first-letter in a span after a 2 second setTimeout call. The span receives font-size:500% and color:red styling.</p>
+	<p id="seven">This paragraph does the same as above, only it also sets the ::first-line element to font-variant:normal as well. Also, the span for this paragraph receives an extra display:inline-block.</p>
+	<p id="eight">This paragraph will render initially in Quattrocento, but a class will be set on it after 2 seconds to change it to <code>font-family:Cabin,cursive</code>.</p>
+</body>
+<script src="jquery.js"></script>
+<script src="testy.js"></script>
+</html>
